@@ -10,6 +10,19 @@ class SearchBox extends Component {
     }
     searchBoxSubmitHandler = (e) => {
         e.preventDefault();
+        fetch(`https://omdbapi.com/?s=${this.state.searchLine}`)
+            .then(response => response.json())
+            .then(res => {
+                store.dispatch({
+                    type: "SEARCH_MOVIE",
+                    payload: {
+                        movies: res.search
+                    }
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            });
     }
     render() {
         const { searchLine } = this.state;
