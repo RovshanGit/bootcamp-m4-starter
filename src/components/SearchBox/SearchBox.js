@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './SearchBox.css';
+import store from '../Redux/store'
 
 class SearchBox extends Component {
     state = {
@@ -36,7 +37,7 @@ class SearchBox extends Component {
                             value={searchLine}
                             type="text"
                             className="search-box__form-input"
-                            placeholder="Например, Shawshank Redemption"
+                            placeholder="Например, Sehirli xalat"
                             onChange={this.searchLineChangeHandler}
                         />
                     </label>

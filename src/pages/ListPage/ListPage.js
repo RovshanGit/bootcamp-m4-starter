@@ -3,9 +3,8 @@ import './ListPage.css';
 
 class ListPage extends Component {
     state = {
-        movies: [
-            { title: 'The Godfather', year: 1972, imdbID: 'tt0068646' }
-        ]
+        movies: [],
+
     }
     componentDidMount() {
         const id = this.props.match.params;
@@ -14,6 +13,7 @@ class ListPage extends Component {
         // TODO: запросы к серверу по всем imdbID
     }
     render() { 
+        const link = "https://www.imdb.com/title/"+key;
         return (
             <div className="list-page">
                 <h1 className="list-page__title">Мой список</h1>
@@ -21,7 +21,7 @@ class ListPage extends Component {
                     {this.state.movies.map((item) => {
                         return (
                             <li key={item.imdbID}>
-                                <a href="https://www.imdb.com/title/tt0068646/" target="_blank">{item.title} ({item.year})</a>
+                                <a href={link} target="_blank">{item.title} ({item.year})</a>
                             </li>
                         );
                     })}

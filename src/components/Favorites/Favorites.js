@@ -5,9 +5,7 @@ import './Favorites.css';
 class Favorites extends Component {
     state = {
         title: 'Новый список',
-        movies: [
-            { imdbID: 'tt0068646', title: 'The Godfather', year: 1972 }
-        ]
+        movies: []
     }
     render() { 
         return (
