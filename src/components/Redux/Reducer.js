@@ -1,7 +1,9 @@
 const INITIAL_STATE = {
      movies: [],
-     favorites: []
+     favorites: [],
+     countMovies: ""
 }
+let count=0;
 export default function Reducer(state=INITIAL_STATE,action) {
     switch (action.type) {
         case "SEARCH_MOVIE":
@@ -20,6 +22,7 @@ export default function Reducer(state=INITIAL_STATE,action) {
                     countMovies:count
                 }
             };
+            break;
             case "DELETE_MOVIE":
                 const afterDelete = state.favorites.filter(movie => movie.imdbID !== action.payload.imdbID)
                 count --
