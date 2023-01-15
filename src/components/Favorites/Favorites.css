@@ -31,3 +31,12 @@
     opacity: 0.9;
     transition: all 0.2s linear;
 }
+.favorites__list_items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.favorites__save:disabled {
+    background-color: gray;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Favorites.css';
-
+import store from '../Redux/store';
+import { Link } from 'react-router-dom';
 
 class Favorites extends Component {
     state = {
